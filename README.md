@@ -21,7 +21,7 @@
 
 - add the following to your server.cfg file : ensure rsg-witchdoctor
 
-# Herbs System
+# witchdoctor revive System
 
 - Locations hidden
 
