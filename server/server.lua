@@ -12,7 +12,7 @@ end
 local function CheckVersion()
     PerformHttpRequest(
         --'https://raw.githubusercontent.com/Rexshack-RedM/rsg-witchdoctor/main/version.txt',
-        'https://raw.githubusercontent.com/Andyauk/rsg-witchdoctor/main/version.txt', --temp upda in
+        'https://raw.githubusercontent.com/Andyauk/rsg-witchdoctor/main/version.txt', --temp update in
         function(err, text, headers)
             local currentVersion = GetResourceMetadata(GetCurrentResourceName(), 'version')
 
