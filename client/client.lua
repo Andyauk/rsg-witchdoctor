@@ -54,7 +54,7 @@ AddEventHandler(
                 -- Done
                 ClearPedTasks(PlayerPedId())
                 TriggerEvent('rsg-medic:client:adminRevive')
-                RSGCore.Functions.Notify('All better?', 'success')
+                lib.notify({ title = 'Preparing', description = 'All better?', type = 'inform', duration = 5000 })
             end,
             function()
                 ClearPedTasks(PlayerPedId())
@@ -68,6 +68,6 @@ RegisterNetEvent('rsg-witchdoctor:client:notenoughmoney')
 AddEventHandler(
     'rsg-witchdoctor:client:notenoughmoney',
     function()
-        RSGCore.Functions.Notify('Not Enough Cash - This practice is not free', 'error', 3000)
+        lib.notify({ title = 'Not Enough Cash', description = 'This practice is not free', type = 'Error', duration = 5000 })
     end
 )

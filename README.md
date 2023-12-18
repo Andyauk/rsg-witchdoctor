@@ -7,6 +7,7 @@
 
 - rsg-medic
 - rsg-core
+- ox_lib
 
 # Installation
 
