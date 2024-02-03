@@ -71,3 +71,4 @@ AddEventHandler(
         lib.notify({ title = 'Not Enough Cash', description = 'This practice is not free', type = 'Error', duration = 5000 })
     end
 )
+print("^2Script by ^1Andyauk^7")
