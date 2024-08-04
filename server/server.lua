@@ -50,6 +50,7 @@ AddEventHandler(
         if cashBalance >= ReviveAmount then
             Player.Functions.RemoveMoney('cash', ReviveAmount)
             --TriggerClientEvent('rsg-witchdoctor:client:startrevive', Player.PlayerData.source)
+            
             TriggerClientEvent('rsg-medic:client:adminRevive', Player.PlayerData.source)
         else
             TriggerClientEvent('rsg-witchdoctor:client:notenoughmoney', Player.PlayerData.source)
