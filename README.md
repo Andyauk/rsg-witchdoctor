@@ -29,5 +29,5 @@
 # Credits
 
 - RexShack
-- andyauk
+- Andyauk
 - SagginChairLLC
