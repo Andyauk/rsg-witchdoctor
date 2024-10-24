@@ -30,36 +30,29 @@ RegisterNetEvent('rsg-witchdoctor:client:startrevive')
 AddEventHandler(
     'rsg-witchdoctor:client:startrevive',
     function()
-        local revivetime = Config.WaitTime * 1000
-        RSGCore.Functions.Progressbar(
-            'search_register',
-            'Getting Help',
-            revivetime,
-            false,
-            true,
-            {
-                disableMovement = false,
-                disableCarMovement = false,
-                disableMouse = false,
-                disableCombat = true
+        lib.progressBar({
+            duration = Config.WaitTime * 1000,
+            position = 'bottom',
+            useWhileDead = false,
+            canCancel = false,
+            disableControl = true,
+            disable = {
+                move = false,
+                car = false,
+                mouse = false,
+                combat = true,
             },
-            {
-                animDict = 'script_common@dead@male',
-                anim = 'faceup_01',
-                flags = 1
+            anim = {
+                dict = 'script_common@dead@male',
+                clip = 'faceup_01',
+                flag = 1,
             },
-            {},
-            {},
-            function()
-                -- Done
-                ClearPedTasks(PlayerPedId())
-                TriggerEvent('rsg-medic:client:adminRevive')
-                lib.notify({ title = 'Preparing', description = 'All better?', type = 'inform', duration = 5000 })
-            end,
-            function()
-                ClearPedTasks(PlayerPedId())
-            end
-        )
+            label = 'Getting Help...',
+        })
+        -- Done
+        ClearPedTasks(PlayerPedId())
+        TriggerEvent('rsg-medic:client:adminRevive')
+        lib.notify({ title = 'Preparing', description = 'All better?', type = 'inform', duration = 5000 })
     end
 )
 
